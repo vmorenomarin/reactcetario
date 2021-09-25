@@ -5,7 +5,7 @@ export const Nav = () => {
   return (
     // <div>
 
-    <header className="text-white px-3">
+    <header className="text-white px-3  border-bottom border-warning border-2">
       <nav className="container navbar px-3">
         <div className="d-flex justify-content-between align-items-center col-12">
           <NavLink className="navbar-brand text-white" to="/">

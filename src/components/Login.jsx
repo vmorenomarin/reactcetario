@@ -5,7 +5,7 @@ import { useState } from "react/cjs/react.development";
 import Swal from "sweetalert2";
 
 export const Login = () => {
-  const history = useHistory(); // Uso el hook de react-router-dom
+  const history = useHistory(); // Uso el hook de react-router-domb
   const [username, setUsername] = useState("admin@admin.com");
   const [psw, setPsw] = useState("");
 
@@ -15,16 +15,17 @@ export const Login = () => {
       history.push("/meals");
     } else {
       Swal.fire({
-        title: "Incorrect data",
-        text: "Typed username or password are wrong. Please, try again.",
+        title: "<span class='text-warning'>Incorrect data</span>",
+        html: "<span class='text-white'>Typed username or password are wrong. Please, try again.</span>",
         icon: 'warning',
         iconColor: '#ffc107',
         confirmButtonColor: "#ffc107",
         background: "#212529",
-        
+        // html: "true",
       });
     }
   };
+
 
   return (
     <div
