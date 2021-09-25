@@ -1,31 +1,37 @@
 import React from "react";
 import { useHistory } from "react-router";
 import { useState } from "react/cjs/react.development";
-
 import Swal from "sweetalert2";
+import { useUser } from "../context/UserContext";
 
 export const Login = () => {
-  const history = useHistory(); // Uso el hook de react-router-domb
+  const history = useHistory(); // Uso el hook de react-router-dom para el manejo de las URL.
   const [username, setUsername] = useState("admin@admin.com");
   const [psw, setPsw] = useState("");
+  const { setLogin } = useUser();
 
   const loginUser = (e) => {
-    e.preventDefault(); // Evira que al oprimir el botón de logue se me cargue la página.
+    // Esta función me permite manjar lo que sucede cuando el usuario realiza un logeo con los datos correctos o si se equivoca al ingrersar las credenciales.
+
+    e.preventDefault(); // Evita que al oprimir el botón de logue se me cargue la página.
     if (username === "admin@admin.com" && psw === "123") {
+      localStorage.setItem("login", true)
+      setLogin(true);
       history.push("/meals");
     } else {
+      setLogin(false);
+      localStorage.setItem("login", false)
       Swal.fire({
         title: "<span class='text-warning'>Incorrect data</span>",
         html: "<span class='text-white'>Typed username or password are wrong. Please, try again.</span>",
-        icon: 'warning',
-        iconColor: '#ffc107',
+        icon: "warning",
+        iconColor: "#ffc107",
         confirmButtonColor: "#ffc107",
         background: "#212529",
-        // html: "true",
+        allowEscapeKey: true,
       });
     }
   };
-
 
   return (
     <div
