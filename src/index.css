@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap");
+
+body {
+  font-family: "Nunito";
+}
+
+header {
+  background: linear-gradient(
+    130deg,
+    rgba(33, 37, 41, 0.9598214285714286) 51%,
+    rgba(220, 53, 69, 0.9654236694677871) 95%,
+    rgba(255, 193, 7, 1) 99%
+  );
+}
+
+#login-page{
+  height: 75vh;
+  background-image: url('login-bg.webp') ;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+#login-bnt:hover {
+  /* color: white !important; */
+}
+
+#card-meal:hover{
+  transform: scale(1.06);
+  transition: 0.4s ease-in-out;
+  
+}
