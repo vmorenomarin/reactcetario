@@ -8,22 +8,30 @@ export const Nav = () => {
 
   const logout = () => {
     setLogin(false);
-    sessionStorage.setItem("login", false)
+    localStorage.setItem("login", false);
     history.push("/");
   };
   return (
     <header className="text-white px-3  border-bottom border-warning border-2">
       <nav className="container navbar px-3">
         {login ? (
-          <div className="d-flex justify-content-between align-items-center col-12">
+          <div className="d-flex justify-content-between align-items-center flex-gap col-12">
             <NavLink className="navbar-brand text-white" to="/">
               <img
                 src="img/chef.svg"
-                className="align-baseline"
+                className="align-baseline me-2"
                 style={{ width: "16px" }}
                 alt=""
-              />{" "}
+              />
               React-cetario
+            </NavLink>
+            <NavLink className="navbar-brand ms-auto text-warning" to="/meals">
+              
+              Search <span className="bi bi-search align-middle"></span>
+            </NavLink>
+            <NavLink className="navbar-brand text-warning" to="/meals">
+              
+              Meal <span className="bi bi-form align-middle"></span>
             </NavLink>
             <button
               className="text-decoration-none btn btn-outline-warning btn-sm"
@@ -37,10 +45,10 @@ export const Nav = () => {
             <NavLink className="navbar-brand text-white" to="/">
               <img
                 src="img/chef.svg"
-                className="align-baseline"
+                className="align-baseline me-2"
                 style={{ width: "16px" }}
                 alt=""
-              />{" "}
+              />
               React-cetario
             </NavLink>
           </div>
